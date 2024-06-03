@@ -90,4 +90,3 @@ def majorityElement(arr):
 arr = [2, 2, 1, 1, 1, 2, 2]
 ans = majorityElement(arr)
 print("The majority element is:", ans)
-
