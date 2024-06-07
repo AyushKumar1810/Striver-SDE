@@ -65,3 +65,14 @@ def maxLen(A: List[int], n: int) -> int:
             else:
                 mpp[sum] = i
     return maxi
+
+
+def solve(a: List[int]) -> int:
+    max=0
+    for i in range(len(a)):
+        sum=0
+        for j in range(i+1,len(a)):
+            sum=sum+a[j]
+            if sum ==0:
+                maxx=(max,j-i+1)
+    return maxx
