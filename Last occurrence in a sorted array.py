@@ -13,7 +13,7 @@
 # Input: N = 7, target=60, array[] = {3,4,13,13,13,20,40}
 # Output: -1
 # Explanation: Target value 60 is not present in the array
-
+#NOTE : for last occurance 
 def last(arr,n,target):
     low , high = 0 , n-1
     ans=n
@@ -27,5 +27,20 @@ def last(arr,n,target):
         else:
             low = mid +1
     return ans
+#NOTE : for First Occurance , if we got the elemen the we will search in the left of that , it means hight = mid -1 (we have to shrink our limit to start - mid ) 
+
+def first(arr,n , target):
+    start , end = 0  , n-1
+    result = n
+    while start < end :
+        mid = start + (end - start )/2
+        if arr[mid] == target:
+            ans = mid
+            end = mid -1
+        elif arr[mid] < target:
+            start = mid +1
+        else:
+            end = mid -1
+    return ans 
 
 
