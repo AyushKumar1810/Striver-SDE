@@ -44,3 +44,4 @@ def first(arr,n , target):
     return ans 
 
 
+
