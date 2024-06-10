@@ -75,3 +75,9 @@ def search_rotated_array(arr: List[int], k: int) -> bool:
 # Example usage
 print(search_rotated_array([7, 8, 1, 2, 3, 3, 3, 4, 5, 6], 3))  # Expected output: True
 print(search_rotated_array([7, 8, 1, 2, 3, 3, 3, 4, 5, 6], 10))  # Expected output: False
+
+
+
+
+
+
