@@ -71,3 +71,13 @@ print(find_nth_root(N, M)) # Output: 3
 N = 4
 M = 69
 print(find_nth_root(N, M)) # Output: -1
+
+# import math
+# def nth(N,M):
+#     if N==0 or N==1:
+#         return -1
+#     root=pow(M,1/N)
+#     if root.is_integer():
+#         return int(root)
+#     else:
+#         return-1
