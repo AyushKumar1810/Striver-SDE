@@ -17,12 +17,12 @@ def removeNthFromEnd(head, n):
         return head.next
     
     # Move both pointers until fast reaches the end
-    while fast.next:
+    while fast.next:# we will stop fast to the tail of the LL 
         fast = fast.next
         slow = slow.next
     
     # Remove the Nth node from the end
-    slow.next = slow.next.next # we will connect slow pointer next to next.next then the node at which slow pointer is there will be poiting to null that means it  has been removed
+    slow.next = slow.next.next # we will connect slow pointer next to next.next then the node at which slow pointer is there will be poiting to null that means it  has been removed, Our slow pointer will be just on one left of the Nth node from the end
     
     return head
 
