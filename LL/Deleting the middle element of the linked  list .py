@@ -35,18 +35,52 @@
 # Node 0 with value 2 is the only node remaining after removing node 1.
 #NOTE: simple only use of slow and fast pointers : We will tke two pointers fast and slow initialy Both are at head position , fast will be 2X ahead of slow ,fast = fast.next.next . then we will use while Loop till fast and slow not equal to null till fast reaches it's end the slow will be at the middle then we will shift the pointer of slow,next to slow.next.next then we will return the LL In simple way if someone is running at speed of 2times the 1st then defineltly he will complete the race and the 1st one will be in the middle of the race . it is optimised one as we have completed it in with single Go 
 #NOTE: we cann also go for 1.5Go if we find the length and the we easily find the mid node of LL
-class Solution:
-    def deleteMiddle(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        #Base Case Checking 
-        if head is not None or head.next is not None:
-            return None
-        
-        slow , fast = head , head.next.next 
-         # Two-Pointer Approach to Find the Middle Node
-        while fast and fast.next:
-            slow= slow.next
-            fast=fast.next  
-        # Delete the Middle Node
-        slow.next = slow.next.next
-        # Return the Updated Head
-        return head
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+def deleteMiddle(head):
+    if not head or not head.next:
+        return None
+    
+    slow = fast = head
+    prev_slow = None
+    
+    while fast and fast.next:
+        prev_slow = slow
+        slow = slow.next
+        fast = fast.next.next
+    
+    # Delete the middle node
+    if prev_slow:
+        prev_slow.next = slow.next
+    
+    return head
+
+# Helper function to print the linked list
+def printList(head):
+    curr = head
+    while curr:
+        print(curr.val, end=" -> ")
+        curr = curr.next
+    print("None")
+
+# Example usage
+# Creating the linked list [1, 2, 3, 4, 5]
+head = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5)))))
+
+# Deleting the middle node
+head = deleteMiddle(head)
+
+# Printing the resulting linked list
+printList(head)  # Output should be 1 -> 2 -> 4 -> 5 -> None
+
+# Creating the linked list [1, 2, 3, 4, 5, 6]
+head2 = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5, ListNode(6))))))
+
+# Deleting the middle node
+head2 = deleteMiddle(head2)
+
+# Printing the resulting linked list
+printList(head2)  # Output should be 1 -> 2 -> 3 -> 5 -> 6 -> None
