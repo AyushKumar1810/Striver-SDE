@@ -72,6 +72,7 @@ def print_linked_list(head):
         values.append(head.val)
         head = head.next
     print(values)
+    
 
 # Test cases
 head1 = build_linked_list([1, 2, 2, 1])
