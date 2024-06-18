@@ -20,3 +20,12 @@
 
 # 1 <= s.length, goal.length <= 100
 # s and goal consist of lowercase English letters.
+
+def rotateString(s: str, goal: str) -> bool:
+    if len(s)!=len(goal):
+        return False
+    double = s+s
+    return goal in double
+# Example usage:
+print(rotateString("abcde", "cdeab"))  # Output: True
+print(rotateString("abcde", "abced"))  # Output: False
