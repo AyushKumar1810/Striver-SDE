@@ -22,7 +22,7 @@
 # Output: true
 def isIsomorphic(s: str, t: str) -> bool:
     if len(s) != len(t):
-        return false
+        return False
     
     # Dictionaries for character mappings
     s_to_t = {}
