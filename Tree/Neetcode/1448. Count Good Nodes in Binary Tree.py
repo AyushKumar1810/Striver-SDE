@@ -44,6 +44,7 @@ class Solution:
     def goodNodes(self, root: Optional[TreeNode]) -> int:
         def dfs(node, max_val):
             if not node:
+
                 return 0
             # Check if the current node is a good node
             good = 1 if node.val >= max_val else 0
