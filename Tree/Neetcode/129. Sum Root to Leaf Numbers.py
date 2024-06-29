@@ -47,3 +47,4 @@ class Solution:
                 return num
             return dfs(curr.left,num) + dfs(curr.right , num)
         return dfs(root,0)
+    
